@@ -28,6 +28,15 @@ packages = ["src/eventstore"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+addopts = "--cov=eventstore --cov-report=term-missing --cov-fail-under=80"
+
+[tool.coverage.run]
+branch = true
+source = ["eventstore"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
 
 [tool.ruff]
 line-length = 100
